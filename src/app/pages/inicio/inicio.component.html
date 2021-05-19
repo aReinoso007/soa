@@ -2,20 +2,20 @@
 <h1>Transaccion IntraBancaria</h1>
 <div class="formulario" style="text-align:left;">
     <form class="transferencia" (ngSubmit)="transferir()" #transfernciaForm="ngForm">
-        <label for="bancoOrigen">Banco Origen </label>
-        <input type="text" placeholder="nombre banco origen" [(ngModel)]="transaccion.banco_origen" [ngModelOptions]="{standalone: true}" required>
+        <label>Banco Origen </label>
+        <input type="text" placeholder="Nombre banco origen" [(ngModel)]="transaccion.banco_origen" [ngModelOptions]="{standalone: true}" required>
         <br>
-        <label for="bancoOrigen">Cuenta Origen </label>
-        <input type="text" placeholder="nombre banco origen" [(ngModel)]="transaccion.cuenta_origen" [ngModelOptions]="{standalone: true}" required>
+        <label>Cuenta Origen </label>
+        <input type="text" placeholder="Numero cuenta origen" [(ngModel)]="transaccion.cuenta_origen" [ngModelOptions]="{standalone: true}" required>
         <br>
-        <label for="bancoOrigen">Banco Destino </label>
-        <input type="text" placeholder="nombre banco origen" [(ngModel)]="transaccion.banco_destino" [ngModelOptions]="{standalone: true}" required>
+        <label>Banco Destino </label>
+        <input type="text" placeholder="Nombre banco destino" [(ngModel)]="transaccion.banco_destino" [ngModelOptions]="{standalone: true}" required>
         <br>
-        <label for="bancoOrigen">Destino </label>
-        <input type="text" placeholder="nombre banco origen" [(ngModel)]="transaccion.cuenta_destino" [ngModelOptions]="{standalone: true}" required>
+        <label>Destino </label>
+        <input type="text" placeholder="Numero cuenta destino" [(ngModel)]="transaccion.cuenta_destino" [ngModelOptions]="{standalone: true}" required>
         <br>
-        <label for="bancoOrigen">Monto $  </label>
-        <input type="text" placeholder="nombre banco origen" [(ngModel)]="transaccion.monto" [ngModelOptions]="{standalone: true}" required>        
+        <label>Monto $  </label>
+        <input type="text" placeholder="Monto a transferir" [(ngModel)]="transaccion.monto" [ngModelOptions]="{standalone: true}" required>        
         <br>
         <button type="submit" [disabled]="!transfernciaForm.form.valid">Transferir</button>
 
