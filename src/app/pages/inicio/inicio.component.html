@@ -1,1 +1,23 @@
-<p>inicio works!</p>
+
+<h1>Transaccion IntraBancaria</h1>
+<div class="formulario" style="text-align:left;">
+    <form class="transferencia" (ngSubmit)="transferir()" #transfernciaForm="ngForm">
+        <label for="bancoOrigen">Banco Origen </label>
+        <input type="text" placeholder="nombre banco origen" [(ngModel)]="transaccion.banco_origen" [ngModelOptions]="{standalone: true}" required>
+        <br>
+        <label for="bancoOrigen">Cuenta Origen </label>
+        <input type="text" placeholder="nombre banco origen" [(ngModel)]="transaccion.cuenta_origen" [ngModelOptions]="{standalone: true}" required>
+        <br>
+        <label for="bancoOrigen">Banco Destino </label>
+        <input type="text" placeholder="nombre banco origen" [(ngModel)]="transaccion.banco_destino" [ngModelOptions]="{standalone: true}" required>
+        <br>
+        <label for="bancoOrigen">Destino </label>
+        <input type="text" placeholder="nombre banco origen" [(ngModel)]="transaccion.cuenta_destino" [ngModelOptions]="{standalone: true}" required>
+        <br>
+        <label for="bancoOrigen">Monto $  </label>
+        <input type="text" placeholder="nombre banco origen" [(ngModel)]="transaccion.monto" [ngModelOptions]="{standalone: true}" required>        
+        <br>
+        <button type="submit" [disabled]="!transfernciaForm.form.valid">Transferir</button>
+
+    </form>
+</div>

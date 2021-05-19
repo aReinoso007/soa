@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CuentaBancaria } from 'src/app/model/cuentaBancaria.model';
+import { Transaccion } from 'src/app/model/transaction.model';
 import { TransaccionesService } from 'src/app/services/transacciones.service';
 
 @Component({
@@ -7,6 +9,9 @@ import { TransaccionesService } from 'src/app/services/transacciones.service';
   styleUrls: ['./inicio.component.scss']
 })
 export class InicioComponent implements OnInit {
+
+  cuentaBancaria: CuentaBancaria = new CuentaBancaria();
+  transaccion: Transaccion = new Transaccion();
 
   constructor(
     private transaccionesService: TransaccionesService
@@ -20,6 +25,10 @@ export class InicioComponent implements OnInit {
     return this.transaccionesService.getDemo().subscribe(data=>{
       console.log("Data obtenida: " + data);
     })
+  }
+
+  transferir(){
+
   }
 
 }
