@@ -18,7 +18,7 @@ export class InicioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getDemo();
+    //this.getDemo();
   }
 
   getDemo(){
@@ -28,7 +28,9 @@ export class InicioComponent implements OnInit {
   }
 
   transferir(){
-
+    const data = JSON.stringify(this.transaccion)
+    console.log('data enviada: ', data);
+    return this.transaccionesService.postTransferencia(data);
   }
 
 }
