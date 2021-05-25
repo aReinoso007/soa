@@ -1,6 +1,6 @@
+import { Transaction } from './../../model/transaction.model';
 import { Component, OnInit } from '@angular/core';
 import { CuentaBancaria } from 'src/app/model/cuentaBancaria.model';
-import { Transaccion } from 'src/app/model/transaction.model';
 import { TransaccionesService } from 'src/app/services/transacciones.service';
 
 @Component({
@@ -11,14 +11,14 @@ import { TransaccionesService } from 'src/app/services/transacciones.service';
 export class InicioComponent implements OnInit {
 
   cuentaBancaria: CuentaBancaria = new CuentaBancaria();
-  transaccion: Transaccion = new Transaccion();
+  transaccion: Transaction = new Transaction();
 
   constructor(
     private transaccionesService: TransaccionesService
   ) { }
 
   ngOnInit(): void {
-    //this.getDemo();
+    this.getDemo();
   }
 
   getDemo(){
@@ -28,9 +28,7 @@ export class InicioComponent implements OnInit {
   }
 
   transferir(){
-    const data = JSON.stringify(this.transaccion)
-    console.log('data enviada: ', data);
-    return this.transaccionesService.postTransferencia(data);
+    return this.transaccionesService.postTransferencia(this.transaccion);
   }
 
 }
