@@ -1,0 +1,36 @@
+<br>
+<div id="content">
+    <div class="table">
+        <h1>Ver transacciones</h1>
+        <input type="text" placeholder="Nombre de banco" [(ngModel)]="banco"/>
+        <button (click)="getTransaccion()">Consultar</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Banco Origen</th>
+                    <th>Cuenta Origen</th>
+                    <th>Banco Destino</th>
+                    <th>Cuenta Destino</th>
+                    <th>Monto</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let t of  transacciones">
+                    <td>{{t.CODIGO}}</td>
+                    <td>{{t.BANCO_ORIGEN}}</td>
+                    <td>{{t.CUENTA_ORIGEN}}</td>
+                    <td>{{t.BANCO_DESTINO}}</td>
+                    <td>{{t.CUENTA_DESTINO}}</td>
+                    <td>{{t.MONTO}}</td>
+                    <td>{{t.FECHATRANSACCION}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br>
+<br>
+<br>

@@ -10,7 +10,7 @@ export class TransaccionesService {
 
   url = 'src\assets\config.json'
   postURL = 'http://localhost:8081/Transaction'
-  getURL = 'http://localhost:8081/Transactions3'
+  getURL = 'http://localhost:8081/Transactions'
   constructor(private http: HttpClient) { }
 
   getDemo(){
@@ -18,16 +18,8 @@ export class TransaccionesService {
   }
 
   /*Path: /Cuentas1 */
-  getActivityB1(){
-    return this.http.get('http://localhost:3000/posts1')
-  }
-  
-  getActivityB2(){
-    
-  }
-
-  getActivityB3(){
-    
+  getTransactions(banco: string){
+    return this.http.get(this.getURL+'?database='+banco)
   }
 
   postTransferencia(data?: any){

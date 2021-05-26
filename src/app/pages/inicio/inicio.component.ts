@@ -12,6 +12,7 @@ export class InicioComponent implements OnInit {
 
   cuentaBancaria: CuentaBancaria = new CuentaBancaria();
   transaccion: Transaction = new Transaction();
+  
 
   constructor(
     private transaccionesService: TransaccionesService
@@ -28,7 +29,7 @@ export class InicioComponent implements OnInit {
   }
 
   transferir(){
-    return this.transaccionesService.postTransferencia(this.transaccion);
+    return this.transaccionesService.postTransferencia(this.transaccion)
   }
 
 }
