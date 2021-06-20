@@ -8,18 +8,19 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class TransaccionesService {
 
-  url = 'src\assets\config.json'
-  postURL = 'http://localhost:8081/Transaction'
-  getURL = 'http://localhost:8081/Transactions'
+  rootURL ='/api';
+  getURL='http://localhost:3000/transacciones';
   constructor(private http: HttpClient) { }
 
   getDemo(){
-    return this.http.get(this.getURL);
+    return this.http.get(this.rootURL+'transacciones');
   }
 
   /*Path: /Cuentas1 */
-  getTransactions(banco: string){
-    return this.http.get(this.getURL+'?database='+banco)
+  getTransactions(){
+    const headers = {'Content-Type': 'application/json'};
+    //return this.http.get(this.rootURL+'/transacciones');
+    return this.http.get(this.getURL);
   }
 
   postTransferencia(data?: any){
@@ -27,7 +28,7 @@ export class TransaccionesService {
     console.log('data antes de json: ', data)
     const body = JSON.stringify(data);
     console.log('data enviada: ', body)
-    this.http.post(this.postURL, body).subscribe((r)=>{
+    this.http.post(this.rootURL+'transaccion', body).subscribe((r)=>{
       console.log('respuesta del post: ', r)
     });
   }

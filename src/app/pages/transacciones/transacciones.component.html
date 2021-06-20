@@ -2,29 +2,26 @@
 <div id="content">
     <div class="table">
         <h1>Ver transacciones</h1>
-        <input type="text" placeholder="Nombre de banco" [(ngModel)]="banco"/>
         <button (click)="getTransaccion()">Consultar</button>
         <table>
             <thead>
                 <tr>
                     <th>Codigo</th>
-                    <th>Banco Origen</th>
-                    <th>Cuenta Origen</th>
-                    <th>Banco Destino</th>
-                    <th>Cuenta Destino</th>
+                    <th>Descripcion</th>
+                    <th>Fecha Transaccion</th>
                     <th>Monto</th>
-                    <th>Fecha</th>
+                    <th>Tipo getTransaccion</th>
+                    <th>Numero Cuenta</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let t of  transacciones">
                     <td>{{t.CODIGO}}</td>
-                    <td>{{t.BANCO_ORIGEN}}</td>
-                    <td>{{t.CUENTA_ORIGEN}}</td>
-                    <td>{{t.BANCO_DESTINO}}</td>
-                    <td>{{t.CUENTA_DESTINO}}</td>
-                    <td>{{t.MONTO}}</td>
+                    <td>{{t.DESCRIPCION}}</td>
                     <td>{{t.FECHATRANSACCION}}</td>
+                    <td>{{t.MONTO}}</td>
+                    <td>{{t.TIPOTRANSACCION}}</td>
+                    <td>{{t.CUENTANUMERO}}</td>
 
                 </tr>
             </tbody>

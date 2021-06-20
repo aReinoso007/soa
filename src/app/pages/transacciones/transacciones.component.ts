@@ -9,7 +9,6 @@ import { TransaccionesService } from 'src/app/services/transacciones.service';
 export class TransaccionesComponent implements OnInit {
 
   transacciones: any = [];
-  banco: string = '';
   constructor(
     private transaccionService: TransaccionesService
   ) { }
@@ -19,11 +18,10 @@ export class TransaccionesComponent implements OnInit {
   }
 
   getTransaccion(){
-    this.transaccionService.getTransactions(this.banco).subscribe((data: {})=>{
+    this.transaccionService.getTransactions().subscribe((data: {})=>{
       this.transacciones = data;
       console.log('transacciones obtenidas: ', data)
     })
-    this.banco ='';
   }
 
 }

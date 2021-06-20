@@ -19,7 +19,7 @@ export class InicioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getDemo();
+    
   }
 
   getDemo(){
